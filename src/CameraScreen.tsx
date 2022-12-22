@@ -25,30 +25,29 @@ export enum CameraType {
   Back = 'back'
 }
 
-export type Props = {
-  focusMode?: string,
-  zoomMode?: string,
-  ratioOverlay?: string,
-  ratioOverlayColor?: string,
-  allowCaptureRetake: boolean,
-  cameraRatioOverlay: any,
-  showCapturedImageCount?: boolean,
-  captureButtonImage: any,
-  captureButtonImageStyle: ImageStyle,
-  cameraFlipImage: any,
-  cameraFlipImageStyle: ImageStyle,
-  hideControls: any,
-  showFrame: any,
-  scanBarcode: any,
-  laserColor: any,
-  frameColor: any,
-  torchOnImage: any,
-  torchOffImage: any,
-
-  torchImageStyle: ImageStyle,
-  onReadCode: (event: any) => void;
-  onBottomButtonPressed: (event: any) => void;
-}
+export type Props = ViewProps & {
+    focusMode?: string;
+    zoomMode?: string;
+    ratioOverlay?: string;
+    ratioOverlayColor?: string;
+    allowCaptureRetake: boolean;
+    cameraRatioOverlay?: {ratios: any[]};
+    showCapturedImageCount?: boolean;
+    captureButtonImage?: ImageSourcePropType;
+    captureButtonImageStyle?: StyleProp<ImageStyle>;
+    cameraFlipImage?: ImageSourcePropType;
+    cameraFlipImageStyle?: StyleProp<ImageStyle>;
+    hideControls?: boolean;
+    showFrame?: boolean;
+    scanBarcode?: boolean;
+    laserColor?: ColorValue;
+    frameColor?: ColorValue;
+    torchOnImage?: ImageSourcePropType;
+    torchOffImage?: ImageSourcePropType;
+    torchImageStyle?: StyleProp<ImageStyle>;
+    onReadCode: (event: any) => void;
+    onBottomButtonPressed: (event: any) => void;
+};
 
 type State = {
   captureImages: any[],
